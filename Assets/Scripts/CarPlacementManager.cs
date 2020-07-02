@@ -42,7 +42,6 @@ public class CarPlacementManager : MonoBehaviour
             {
                 isPlacementPoseValid = true;
                 placementPose = hits[0].pose;
-                placementPose.position += new Vector3(0f, 0.01f); //A bit higher than the floor so the car does not spawn in it
             }
             else
                 isPlacementPoseValid = false;
@@ -83,7 +82,7 @@ public class CarPlacementManager : MonoBehaviour
     //Back to placement mode if the car falls in the void
     private void CheckOutOfBounds()
     {
-        if (Car.transform.position.y < -150 && !IsInPlacementMode)
+        if (Car.transform.position.y < -50 && !IsInPlacementMode)
         {
             SwitchMode();
         }

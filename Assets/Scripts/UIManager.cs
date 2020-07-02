@@ -10,26 +10,26 @@ public class UIManager : MonoBehaviour
     public GameObject SteeringJoystick;
     public GameObject TorqueJoystick;
     public Text SwitchModeButtonText;
-    private CarPlacementManager CarManager;
+    private CarPlacementManager carManager;
     void Start()
     {
-        CarManager = FindObjectOfType<CarPlacementManager>();
+        carManager = FindObjectOfType<CarPlacementManager>();
         UpdateUI();
     }
 
     public void UpdateUI()
     {
-        if (CarManager.IsInPlacementMode)
+        if (carManager.IsInPlacementMode)
         {
             SteeringJoystick.SetActive(false);
             TorqueJoystick.SetActive(false);
-            SwitchModeButtonText.text = "Spawn";
+            SwitchModeButtonText.text = "Play";
         }
         else
         {
             SteeringJoystick.SetActive(true);
             TorqueJoystick.SetActive(true);
-            SwitchModeButtonText.text = "Reset";
+            SwitchModeButtonText.text = "Place";
         }
     }
 }
